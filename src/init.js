@@ -7,24 +7,24 @@ $(document).ready(function(){
 
  $('.stop').on('click', function(e){
     e.preventDefault();
-          $(window.dancers).each(function(k, val){
+        // $(window.dancers).each(function(k, val){
+        //   val.stop();
+        // });
+
+     $('.stop').toggleClass('stopped').text('go');
+
+      if($('.stop').hasClass('stopped')){
+
+        $(window.dancers).each(function(k, val){
+          //debugger;
           val.stop();
         });
 
-     // $('.stop').toggleClass('stopped').text('go');
-
-     //  if($('.stop').hasClass('stopped')){
-
-     //    $(window.dancers).each(function(k, val){
-     //      //debugger;
-     //      val.stop();
-     //    });
-
-     //    }else{
-     //      $(window.dancers).each(function(k, val){
-     //      val.step();
-     //    });
-     //  }
+        }else{
+          $(window.dancers).each(function(k, val){
+          val.step();
+        });
+      }
 
 
 

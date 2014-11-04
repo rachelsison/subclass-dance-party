@@ -2,7 +2,7 @@ var makeCelebDancer = function(top, left, timeBetweenSteps){
   this.keepDancing = true;
   makeDancer.call(this, top, left, timeBetweenSteps);
 
-  this.timeBetweenSteps = Math.random()*100;
+  this.timeBetweenSteps = Math.random()*2000;
   this.$node.addClass('celebDancer');
   this.celebs = [];
   this.celebs.push('<img src="images/mel-gibson.png">');
@@ -10,8 +10,8 @@ var makeCelebDancer = function(top, left, timeBetweenSteps){
   var appendImg = this.celebs[this.randomRange(this.celebs.length, 0)];
   this.$node.append(appendImg);
  if( $('.stop').hasClass('stopped')){
-  this.timer = setInterval(this.step.bind(this), this.timeBetweenSteps);
-}
+    this.timer = setInterval(this.step.bind(this), this.timeBetweenSteps);
+  };
 
 };
 

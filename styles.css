@@ -14,6 +14,7 @@ body{
   /*background-color:#444;*/
   //background: url(images/mc-wreck.gif);
   font-size: 18px;
+  overflow: hidden;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
@@ -58,6 +59,16 @@ body, a:link, a:visited, a:active{
   bottom: 0;
   left: 0;
   position: absolute;
+}
+
+.confetti
+{
+  border: 0;
+  width: 1000px;
+  height: 10px;
+  background: green;
+  opacity: .5;
+  z-index: 500;
 }
 
 
