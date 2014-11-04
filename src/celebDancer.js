@@ -1,6 +1,6 @@
 var makeCelebDancer = function(top, left, timeBetweenSteps){
+  this.keepDancing = true;
   makeDancer.call(this, top, left, timeBetweenSteps);
-  //this.$node = $('<span class="dancer celebDancer"></span>');
 
   this.timeBetweenSteps = Math.random()*100;
   this.$node.addClass('celebDancer');
@@ -9,6 +9,10 @@ var makeCelebDancer = function(top, left, timeBetweenSteps){
   this.celebs.push('<img src="images/gary-busey.png">');
   var appendImg = this.celebs[this.randomRange(this.celebs.length, 0)];
   this.$node.append(appendImg);
+ if( $('.stop').hasClass('stopped')){
+  this.timer = setInterval(this.step.bind(this), this.timeBetweenSteps);
+}
+
 };
 
 makeCelebDancer.prototype = Object.create(makeDancer.prototype);
@@ -17,14 +21,12 @@ makeCelebDancer.prototype.constructor = makeCelebDancer;
 makeCelebDancer.prototype.step = function(){
 
 
-
   var width = $("body").width();
   var height = $("body").height();
   var nextPos = [this.randomRange(width, 0), this.randomRange(height, 0)];
 
   var nextWidth = this.randomRange(300, 0);
   var nextHeight = nextWidth*1.45;
-
 
 
   this.$node.animate({
@@ -39,10 +41,14 @@ makeCelebDancer.prototype.step = function(){
       $(this).css('-moz-transform','rotate('+now+'deg)');
       $(this).css('transform','rotate('+now+'deg)');
     },
-    duration:'slow'
-},'linear');
+      duration:'slow'
+  },'linear');
 
- makeDancer.prototype.step.call(this);
+
+   //makeDancer.prototype.step.call(this);
 
 };
 
+makeCelebDancer.prototype.stop = function(){
+  clearInterval(this.timer);
+};

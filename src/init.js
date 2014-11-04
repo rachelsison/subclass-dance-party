@@ -6,23 +6,25 @@ $(document).ready(function(){
 
 
  $('.stop').on('click', function(e){
-
-
-      e.preventDefault();
-     $('.stop').toggleClass('stopped').text('go');
-
-      if($('.stop').hasClass('stopped')){
-
-        $(window.dancers).each(function(k, val){
-          //debugger;
+    e.preventDefault();
+          $(window.dancers).each(function(k, val){
           val.stop();
         });
 
-        }else{
-          $(window.dancers).each(function(k, val){
-          val.step();
-        });
-      }
+     // $('.stop').toggleClass('stopped').text('go');
+
+     //  if($('.stop').hasClass('stopped')){
+
+     //    $(window.dancers).each(function(k, val){
+     //      //debugger;
+     //      val.stop();
+     //    });
+
+     //    }else{
+     //      $(window.dancers).each(function(k, val){
+     //      val.step();
+     //    });
+     //  }
 
 
 
