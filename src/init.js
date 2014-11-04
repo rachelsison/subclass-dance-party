@@ -1,9 +1,39 @@
+
+
+
 $(document).ready(function(){
   window.dancers = [];
 
 
+ $('.stop').on('click', function(e){
+
+
+      e.preventDefault();
+     $('.stop').toggleClass('stopped').text('go');
+
+      if($('.stop').hasClass('stopped')){
+
+        $(window.dancers).each(function(k, val){
+          //debugger;
+          val.stop();
+        });
+
+        }else{
+          $(window.dancers).each(function(k, val){
+          val.step();
+        });
+      }
+
+
+
+  });
+
+
   var width = $("body").width();
   var height = $("body").height();
+
+
+
 
   $(".addDancerButton").on("click", function(event){
     /* This function sets up the click handlers for the create-dancer

@@ -3,12 +3,18 @@ var makeDancer = function(top, left, timeBetweenSteps){
   this.timeBetweenSteps = timeBetweenSteps;
   this.top = top;
   this.left = left;
+  this.timer;
   this.setPosition();
   this.step();
+  window.dancers.push(this);
 }
 
 makeDancer.prototype.step = function(){
-  setTimeout(this.step.bind(this), this.timeBetweenSteps);
+  this.timer = setTimeout(this.step.bind(this), this.timeBetweenSteps);
+};
+
+makeDancer.prototype.stop = function(){
+  clearTimeout(this.timer);
 };
 
 makeDancer.prototype.setPosition = function(){
@@ -18,3 +24,8 @@ makeDancer.prototype.setPosition = function(){
     };
     this.$node.css(styleSettings);
 };
+
+//Generate random number in range
+makeDancer.prototype.randomRange = function(max, min){
+  return Math.floor(Math.random() * (max- min)-min);
+}

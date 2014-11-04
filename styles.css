@@ -1,8 +1,8 @@
 body, html{
   height:100%;
 }
-html { 
-  background: url(images/mc-wreck.gif) no-repeat center center fixed; 
+html {
+  background: url(images/mc-wreck.gif) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -36,7 +36,7 @@ body, a:link, a:visited, a:active{
 }
 
 
-.dancer2{
+.celebDancer{
   border: 0;
   width: 50px;
   height: 72px;
@@ -49,11 +49,16 @@ body, a:link, a:visited, a:active{
 
 }
 
-.dancer2 img{
+.celebDancer img{
   width: 100%;
   height: auto;
 }
 
+.catDancer{
+  bottom: 0;
+  left: 0;
+  position: absolute;
+}
 
 
 
