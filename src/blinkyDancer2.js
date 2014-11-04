@@ -7,7 +7,7 @@ var makeBlinkyDancer2 = function(top, left, timeBetweenSteps){
   this.celebs = [];
   this.celebs.push('<img src="images/mel-gibson.png">');
   this.celebs.push('<img src="images/gary-busey.png">');
-  var appendImg = this.celebs[Math.floor(randomRange(this.celebs.length, 0))];
+  var appendImg = this.celebs[randomRange(this.celebs.length, 0)];
   this.$node.append(appendImg);
 };
 
@@ -26,7 +26,6 @@ makeBlinkyDancer2.prototype.step = function(){
 
 
   makeDancer.prototype.step.call(this);
-  //this.$node.toggle();
   this.$node.animate({  
     borderSpacing: -360, 
     top: nextPos[1],
@@ -47,5 +46,5 @@ makeBlinkyDancer2.prototype.step = function(){
 
 //Generate random number in range
 function randomRange(max, min){
-  return Math.random() * (max- min)-min;
+  return Math.floor(Math.random() * (max- min)-min);
 }
