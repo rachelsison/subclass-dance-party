@@ -10,16 +10,7 @@ makeKittyDj.prototype.constructor = makeKittyDj;
 
 makeKittyDj.prototype.step = function(){
 
+
   makeDancer.prototype.step.call(this);
-  this.$node.animate({
-     //  -moz-transform:     "scaleX(-1)",
-     //  -o-transform:       "scaleX(-1)",
-     //  -webkit-transform:  "scaleX(-1)",
-     //  transform:          "scaleX(-1)",
-     //  filter:             "FlipH",
-     // -ms-filter: "FlipH"
-  });
-
-
 };
 

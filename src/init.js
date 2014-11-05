@@ -4,6 +4,13 @@
 $(document).ready(function(){
   window.dancers = [];
 
+//practice 'lineup' function, probably incorrect syntax
+$('.lineup').on('click', function(e){
+    e.preventDefault();
+    $(window.dancers).each(function(k, val){
+      val.lineup();
+    })
+});
 
  $('.stop').on('click', function(e){
     e.preventDefault();
@@ -21,14 +28,26 @@ $(document).ready(function(){
         });
 
         }else{
+          //Question: why are we using keys + values on an array?
           $(window.dancers).each(function(k, val){
-          val.step();
+            val.step();
+          });
+      }
+  });
+
+  $('#tinyDancer').change(function(){
+      if ($(this).is(':checked')) {
+        $(window.dancers).each(function(k, val){
+
+          val.dancerMaxWidth = 20;
+        });
+      }else{
+         $(window.dancers).each(function(k, val){
+          val.dancerMaxWidth = 400;
         });
       }
-
-
-
   });
+
 
 
   var width = $("body").width();
